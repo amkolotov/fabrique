@@ -6,7 +6,7 @@ sudo docker build .
 
 docker run -it -p 8002:8002 imageid
 
-Административаная панель доступна по адресу 127.0.0.1:8002/admin, name=fabriq, password=fab
+Административная панель доступна по адресу 127.0.0.1:8002/admin, name=fabriq, password=fab
 
 127.0.0.1:8002/api/survey/ - получение списка опросов<br>
 127.0.0.1:8002/api/survey/<int:pk>/ - получение детальной информации об опросе<br> 
