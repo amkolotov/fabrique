@@ -4,7 +4,7 @@
 
 sudo docker build .
 
-docker run -it -p 8002:8002 <imageid>
+docker run -it -p 8002:8002 imageid
 
 Административаная панель доступна по адресу 127.0.0.1:8002/admin, name=fabriq, password=fab
 
