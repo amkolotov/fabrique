@@ -16,7 +16,7 @@ class Survey(models.Model):
     title = models.CharField('Заголовок', max_length=128)
     start_date = models.DateTimeField('Дата старта', auto_now_add=True)
     finish_date = models.DateTimeField('Дата окончания')
-    text = models.CharField(max_length=256)
+    text = models.CharField('Текст', max_length=256)
     is_active = models.BooleanField('Активен', default=True, db_index=True)
 
     class Meta:
@@ -38,7 +38,7 @@ class Question(models.Model):
     )
 
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE, related_name='questions', verbose_name='Опрос')
-    text = models.CharField(max_length=128)
+    text = models.CharField('Текст', max_length=128)
     type = models.CharField('Тип вопроса', max_length=2, choices=TYPE_CHOICES, default='CE')
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
     is_active = models.BooleanField('Активен', default=True, db_index=True)
@@ -56,7 +56,7 @@ class Response(models.Model):
     """Модель ответа"""
     ip = models.CharField('IP адрес', max_length=15)
     question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name='Ответ')
-    choice_text = models.CharField(max_length=256)
+    choice_text = models.CharField('Текст ответа', max_length=256)
     pub_date = models.DateTimeField('Дата ответа', auto_now_add=True)
 
     class Meta:
